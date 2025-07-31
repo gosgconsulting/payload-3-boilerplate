@@ -1,5 +1,4 @@
 import type { CollectionConfig } from 'payload'
-
 import { authenticated } from '../../access/authenticated'
 
 export const Users: CollectionConfig = {
@@ -15,7 +14,9 @@ export const Users: CollectionConfig = {
     defaultColumns: ['name', 'email'],
     useAsTitle: 'name',
   },
-  auth: true,
+  auth: {
+    useAPIKey: true,  // ← CHANGED FROM: auth: true
+  },
   fields: [
     {
       name: 'name',
